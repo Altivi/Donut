@@ -16,3 +16,18 @@
 //= require bootstrap-sprockets
 //= require bootstrap-filestyle
 //= require_tree .
+
+
+$(function() {
+  initPage();
+});
+$(window).bind('page:change', function() {
+  initPage();
+});
+function initPage() {
+  $(":file").filestyle({
+  input: true,
+  buttonBefore: true,
+  buttonText: "Choose avatar"
+})
+}
