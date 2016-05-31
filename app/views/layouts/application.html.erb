@@ -7,17 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<% if user_signed_in? %>
-	<%= link_to "Log out", destroy_user_session_path, method: :delete %>
-	<%= image_tag current_user.avatar.url(:thumb) %>
-	<%= current_user.email %>
-<% else %>
-	<%= link_to "Sign Up", new_user_registration_path %>
-	<%= link_to "Sign In", new_user_session_path %>
-<% end %>
-<%= yield %>
 
+	<%= render 'layouts/header' %>
+	<div class="container">
+		<%= render 'layouts/messages' %>
+		<%= yield %>
+		<%= render 'layouts/footer' %>
+	</div>
 </body>
 </html>

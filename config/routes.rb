@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations', passwords: 'users/passwords' }
   root 'static_pages#home'
   get '/contacts', to: 'static_pages#contacts'
   # The priority is based upon order of creation: first created -> highest priority.
