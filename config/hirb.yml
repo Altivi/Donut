@@ -1,0 +1,7 @@
+:output:
+  User:
+    :options:
+      :fields:
+        - id
+        - email
+        - sign_in_count

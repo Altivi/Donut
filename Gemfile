@@ -33,6 +33,7 @@ gem 'devise'
 gem 'figaro'
 gem 'bootstrap-filestyle-rails'
 gem 'paperclip-dropbox', '~> 1.3', '>= 1.3.2'
+gem 'hirb'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
