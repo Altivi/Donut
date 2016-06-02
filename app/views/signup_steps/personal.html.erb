@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h2>Personal</h2>
+    
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= form_for @user, url: wizard_path, html: { multipart: true, role: "form" } do |f| %>
+
+          <div class="form-group">
+            <%= f.label :avatar %>
+            <%= f.file_field :avatar, class: "filestyle", data: { buttonBefore: true, buttonText: "Choose avatar"} %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Continue", class: "btn btn-default btn-lg btn-block" %>
+            or <%= 	link_to "skip this step", next_wizard_path %>
+          </div>
+        <% end %></br>
+
+      </div>
+    </div>
+  </div>
+</div>
