@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations', passwords: 'users/passwords' }
+  
+  devise_scope :user do
+    get "/login" => "users/sessions#new"
+    post "/login" => "users/sessions#create"
+    get "/signup" => "users/registrations#new"
+    post "/signup" => "users/registrations#create"
+    delete "/logout" => "users/sessions#destroy"
+  end
+
   root 'static_pages#home'
 
   get '/contacts', to: 'static_pages#contacts', as: "contacts"

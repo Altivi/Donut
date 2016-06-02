@@ -27,13 +27,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn'
-gem 'unicorn-rails'
-gem 'devise'
-gem 'figaro'
-gem 'bootstrap-filestyle-rails'
+gem 'unicorn', '~> 5.1'
+gem 'unicorn-rails', '~> 2.2'
+gem 'devise', '~> 4.1', '>= 4.1.1'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'bootstrap-filestyle-rails', '~> 1.2', '>= 1.2.1'
 gem 'paperclip-dropbox', '~> 1.3', '>= 1.3.2'
-gem 'hirb'
+gem 'hirb', '~> 0.7.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -51,5 +51,5 @@ group :development do
 end
 
 group :production do
-  gem 'rails_12factor'	
+  gem 'rails_12factor', '~> 0.0.3'
 end
