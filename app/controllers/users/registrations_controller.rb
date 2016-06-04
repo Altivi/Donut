@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
- before_action :configure_sign_up_params, only: [:create]
- before_action :configure_account_update_params, only: [:update]
+ # before_action :configure_sign_up_params, only: [:create]
+ before_action :configure_account_update_params, only: [:update, :profile_update]
 
   # GET /resource/sign_up
   # def new
@@ -16,6 +16,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def edit
   #   super
   # end
+
+  def profile
+    @user = current_user
+    render :edit_profile
+  end
+
+  def profile_update
+    @user = current_user
+    if @user.update(account_update_params)
+      redirect_to user_settings_profile_url
+      flash[:notice] = "Profile Info was updated!"
+    else
+      render 'edit_profile'
+    end
+  end
 
   # PUT /resource
   # def update
@@ -39,13 +54,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar])
-  end
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar])
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:avatar, :about_me, :birth_date, :last_name, :first_name])
   end
 
   # The path used after sign up.

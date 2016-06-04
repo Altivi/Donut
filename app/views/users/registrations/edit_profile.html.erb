@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+
+    <h2>Edit Profile</h2>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= form_for(current_user, url: update_user_settings_profile_path, html: { method: :put, :multipart => true, role: "form" }) do |f| %>
+          
+          <%= render 'signup_steps/errors' %>
+
+          <div class="form-group">
+            <%= f.label :avatar %>
+            <%= f.file_field :avatar, class: "filestyle", data: { buttonBefore: true, buttonText: "Choose new avatar"} %></br>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :birth_date %>
+            <%= f.date_select :birth_date, start_year: Date.today.year, end_year: 1900, include_blank: true, autofocus: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :about_me, "About me (not required)" %>
+            <%= f.text_area :about_me, placeholder: "Few lines about who you are :)", autofocus: true, class: "form-control", rows: 5, id: "text_area_about_me" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Update", class: "btn btn-default btn-lg btn-block" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= link_to "Back", :back, class: "btn btn-default" %>
+    </br></br></br></br>
+     
+  </div>
+</div>

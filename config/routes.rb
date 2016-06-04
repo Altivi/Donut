@@ -8,6 +8,13 @@ Rails.application.routes.draw do
     get "/signup" => "users/registrations#new"
     post "/signup" => "users/registrations#create"
     delete "/logout" => "users/sessions#destroy"
+
+    get "/users/settings/account", to: "users/registrations#edit", as: :user_settings_account
+    #patch "/users/settings/account", to: "users/registrations#update"
+
+    get "/users/settings/profile", to: "users/registrations#profile", as: :user_settings_profile
+    put "/users/settings/profile", to: "users/registrations#profile_update", as: :update_user_settings_profile
+
   end
 
   root 'static_pages#home'

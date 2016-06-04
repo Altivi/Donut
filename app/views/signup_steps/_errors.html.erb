@@ -1,0 +1,11 @@
+<% if @user.errors.any? %>
+  <%= content_tag(:div, class: "alert alert-danger") do %>
+    <%= link_to "×", "#", data: { dismiss: "alert" }, class: "close" %>
+      <h4><%= pluralize(@user.errors.count, "error") %>:</h4>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+  <% end %>
+<% end %>

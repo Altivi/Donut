@@ -1,9 +1,0 @@
-:output:
-  User:
-    :options:
-      :fields:
-        - id
-        - email
-        - first_name
-        - last_name
-        - avatar
