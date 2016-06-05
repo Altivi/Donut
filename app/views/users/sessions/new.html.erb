@@ -4,8 +4,10 @@
     
     <div class="panel panel-default">
       <div class="panel-body">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f| %>
-          
+        <%= form_for(resource, as: resource_name, url: login_path, html: { role: "form" }) do |f| %>
+        
+          <%= render 'layouts/messages' %>
+
           <div class="form-group">
             <%= f.label :email %>
             <%= f.email_field :email, autofocus: true, class: "form-control" %>

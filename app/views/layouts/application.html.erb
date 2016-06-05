@@ -10,7 +10,7 @@
 
 	<%= render 'layouts/header' %>
 	<div class="container">
-		<%= render 'layouts/messages' %>
+		<%= render 'layouts/messages' if controller.controller_name != 'sessions' %>
 		<%= yield %>
 		<%= render 'layouts/footer' %>
 		<%= debug(params) %>
