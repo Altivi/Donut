@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     get "/users/settings/profile", to: "users/registrations#profile", as: :user_settings_profile
     put "/users/settings/profile", to: "users/registrations#profile_update", as: :update_user_settings_profile
-
+    
   end
 
   root 'static_pages#home'

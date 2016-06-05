@@ -7,32 +7,7 @@
     
     <div class="panel panel-default">
       <div class="panel-body">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true, role: "form" }) do |f| %>
-          
-          <div class="form-group">
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, class: "form-control" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %>
-            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-          </div>
-
-          <div class="form-group">
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-          </div>
-
-          <div class="actions">
-            <%= f.submit "Sign up", class: "btn btn-default btn-lg btn-block" %>
-          </div>
-        <% end %></br>
-
-      </div>
+        <%= render 'form' %>
       <div class="panel-footer">
         <%= render "users/shared/links" %>
       </div>
