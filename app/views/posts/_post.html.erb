@@ -1,0 +1,8 @@
+<%= div_for post do %>
+	<div class="panel panel-danger">
+	  <div class="panel-heading"><%= post.author.first_name + " " + post.author.last_name %></div>
+	  <div class="panel-body">
+	    <%= post.content %>
+	  </div>
+	</div>
+<% end %>

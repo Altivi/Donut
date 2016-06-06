@@ -116,3 +116,44 @@ $colHover       : #ffe6d1; /*/
     border:0;
     background:transparent;
 }
+
+.youtube {
+    font-family: "Oswald", sans-serif;
+    font-size: 26px;
+}
+
+.you {
+    letter-spacing: 0px;
+    text-shadow: 0 2px 0 white;
+}
+
+.tube {
+    text-align: center;
+    position: relative;
+    padding: 0 10px;
+    background-image: -webkit-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+    background-image: -moz-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+    background-image: -o-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+    background-image: -ms-linear-gradient(bottom, rgb(109, 2, 2) 22%, rgb(201, 0, 0) 61%);
+    background-image: linear-gradient(bottom, #6D0202 22%, rgb(201, 0, 0) 61%);
+    color: #fff;
+    letter-spacing: -1px;
+    text-shadow: 0 3px 0 #000;
+    border-radius: 50% / 11%;
+    box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.67);
+    &:before {
+        content: "Posts";
+        line-height: 32px;
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        right: -5%;
+        left: -4.5%;
+        background: inherit;
+        border-radius: 5% / 50%;
+    }
+}
+
+button[data-toggle="modal"] {
+    margin-top: 16px;
+}

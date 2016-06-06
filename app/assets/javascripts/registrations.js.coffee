@@ -1,5 +1,6 @@
 $ ->
 	$('#signup_form').on 'ajax:success', (e, data, status, xhr) ->
+		$('.alert-danger').remove()
 		$('#signup_form').prepend('<div class="alert alert-notice">A confirmation link has been sent to your email address!</div>')
 
 	$('#signup_form').on 'ajax:error', (e, data, status, xhr) ->

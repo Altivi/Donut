@@ -1,0 +1,11 @@
+<%= form_for [current_user, Post.new] do |f| %>
+	<div class="form-group">
+		<%= f.label :content %>
+		<%= f.text_area :content, autofocus: true, class: "form-control" %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit "Create post", class: "btn btn-default btn-lg btn-block" %>
+	</div>
+<% end %>
+

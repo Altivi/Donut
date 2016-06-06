@@ -4,7 +4,7 @@
     <h2>Edit Profile</h2>
     <div class="panel panel-default">
       <div class="panel-body">
-        <%= form_for(current_user, url: update_user_settings_profile_path, html: { method: :put, :multipart => true, role: "form" }) do |f| %>
+        <%= form_for(current_user, url: auth_settings_profile_path, html: { method: :put, :multipart => true, role: "form" }) do |f| %>
           
           <%= render 'signup_steps/errors' %>
 

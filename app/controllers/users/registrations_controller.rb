@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def profile_update
     @user = current_user
     if @user.update(account_update_params)
-      redirect_to user_settings_profile_url
+      redirect_to auth_settings_profile_url
       flash[:notice] = "Profile Info was updated!"
     else
       render 'edit_profile'

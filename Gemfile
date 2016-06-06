@@ -34,7 +34,7 @@ gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap-filestyle-rails', '~> 1.2', '>= 1.2.1'
 gem 'paperclip-dropbox', '~> 1.3', '>= 1.3.2'
-gem 'hirb', '~> 0.7.3'
+gem 'hirb'
 gem 'wicked', '~> 1.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

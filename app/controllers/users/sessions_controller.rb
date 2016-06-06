@@ -24,6 +24,6 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(user) 
-    ((current_user.sign_in_count == 1) ? signup_steps_path : root_path )
+    ((current_user.sign_in_count == 1 || current_user.signup_status != 'active') ? signup_steps_path : root_path )
   end 
 end
