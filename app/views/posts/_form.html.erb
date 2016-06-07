@@ -1,4 +1,4 @@
-<%= form_for [current_user, Post.new] do |f| %>
+<%= form_for [current_user, Post.new], remote: true do |f| %>
 	<div class="form-group">
 		<%= f.label :content %>
 		<%= f.text_area :content, autofocus: true, class: "form-control" %>

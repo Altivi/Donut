@@ -20,15 +20,15 @@
 
 
 $(function() {
-  initPage();
+	initPage();
 });
 $(window).bind('page:change', function() {
-  initPage();
+	initPage();
 });
 function initPage() {
-  $(":file").filestyle({
-  input: true,
-  buttonBefore: true,
-  buttonText: "Choose avatar"
-})
+	$(":file").filestyle({
+		input: true,
+		buttonBefore: true,
+		buttonText: "Choose avatar"
+	})
 }

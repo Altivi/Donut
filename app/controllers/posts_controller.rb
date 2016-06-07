@@ -12,8 +12,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.create(post_params)
-    redirect_to root_path
+    @post = current_user.posts.new(post_params)
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to root_path }
+        format.js
+      else
+        format.html
+        format.js
+      end
+    end
   end
 
   def edit
@@ -23,6 +31,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.js
+    end
   end
 
   private
