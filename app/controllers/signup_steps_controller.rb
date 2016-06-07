@@ -1,4 +1,6 @@
 class SignupStepsController < ApplicationController
+
+	before_action :authenticate_user!
 	include Wicked::Wizard
 
 	steps :identifying, :personal

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :posts, foreign_key: "author_id"
+  has_many :posts, foreign_key: "author_id", dependent: :delete_all
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
@@ -12,6 +12,15 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, if: :active_or_identifying?
   validates :birth_date, presence: true, if: :active_or_identifying?
   validates :about_me, length: { maximum: 160, minimum: 6, allow_blank: true }, if: :active_or_personal?
+  after_save :save_avatar_url
+
+  def save_avatar_url
+    if avatar.url != dropbox_avatar_url && avatar.exists?
+      self.update_column(:dropbox_avatar_url, avatar.url)
+      self.update_column(:medium_avatar_url, avatar.url(:medium))
+      self.update_column(:thumb_avatar_url, avatar.url(:thumb))
+    end
+  end
 
   def active?
     signup_status == 'active'

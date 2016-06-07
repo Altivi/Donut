@@ -1,13 +1,21 @@
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-sm-6 col-md-3">
 		<h3><%= @user.first_name + " " + @user.last_name %></h3>
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<%= image_tag @user.avatar.url(:medium, download: true), alt: "Profile photo", class: "center-block" %>
-			</div>
-		</div>	
-	</div>
-	<div class="col-md-8">
+	    <div class="thumbnail">
+		      <%= image_tag @user.medium_avatar_url, alt: "Profile photo", class: "center-block" %>
+		      <% unless @user.about_me.empty? %>
+			      <div class="caption">
+			        	<h4>About me:</h4>
+			        	<p><%= @user.about_me %></p>
+			      </div>
+		      <% end %>
+		      <div class="caption">
+		        	<h4>Age:</h4>
+		        	<p><%= age(@user.birth_date)%> years</p>
+		      </div>
+	    </div>
+  	</div>
+	<div class="col-md-9">
 		
 			<div class="row">
 				<div class="col-md-6">
