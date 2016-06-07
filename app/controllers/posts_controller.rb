@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
+
   def index
   end
 
@@ -31,7 +32,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @post.destroy
     respond_to do |format|
       format.html { redirect_to root_url }

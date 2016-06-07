@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.autosize
 //= require bootstrap-sprockets
 //= require bootstrap-filestyle
 //= require turbolinks
@@ -30,5 +31,6 @@ function initPage() {
 		input: true,
 		buttonBefore: true,
 		buttonText: "Choose avatar"
-	})
+	});
+	$('#post_content').autosize();
 }

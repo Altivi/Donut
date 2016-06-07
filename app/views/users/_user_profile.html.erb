@@ -48,7 +48,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body" id="your_posts_panel" >
 				
-				<%= render @user.posts %>
+				<%= render @user.posts, author: @user %>
 				<!-- POSTS -->
 			</div>
 		</div>	

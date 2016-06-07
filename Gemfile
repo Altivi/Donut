@@ -37,6 +37,7 @@ gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'paperclip-dropbox', '~> 1.3', '>= 1.3.2'
 gem 'hirb'
 gem 'wicked', '~> 1.3'
+gem 'autosize-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

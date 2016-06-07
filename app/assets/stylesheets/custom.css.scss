@@ -157,3 +157,19 @@ $colHover       : #ffe6d1; /*/
 button[data-toggle="modal"] {
     margin-top: 16px;
 }
+
+.glyphicon-remove {
+    color: #FF796B;
+    &:hover {
+        color: red;
+        text-decoration: none;
+    }
+}
+
+#text_area_about_me {
+    resize: none;
+}
+
+#post_content {
+    resize: vertical;
+}

@@ -2,7 +2,7 @@ $('#error_explanation').remove();
 <% if @post.errors.empty? %>
 	$('#myModal').modal('toggle');
 	$('#new_post').trigger("reset");
-	$('#your_posts_panel').prepend('<%= escape_javascript(render @post) %>').fadeIn("slow");
+	$('#your_posts_panel').prepend('<%= escape_javascript(render @post, author: current_user) %>').fadeIn("slow");
 <% else %>
-	$('#myModal .modal-dialog .modal-content .modal-body').prepend("<%= escape_javascript(render 'shared/error_messages', object: @post) %>")
+	$('#myModal .modal-dialog .modal-content .modal-body').prepend("<%= escape_javascript(render 'shared/error_messages', object: @post) %>");
 <% end %>
