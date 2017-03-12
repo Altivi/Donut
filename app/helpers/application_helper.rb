@@ -7,5 +7,9 @@ module ApplicationHelper
 	    link_to link_text, link_path
 	  end
 	end
+  
+  def user_id
+    user_signed_in? ? current_user.id : ""
+  end
 
 end

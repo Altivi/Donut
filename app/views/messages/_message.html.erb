@@ -1,0 +1,12 @@
+<% unless message.new_record? %>
+	<%= content_tag :li, id: "message_#{message.id}", class: "message #{self_or_other(message)}", data: { id: message.id } do %>
+		<%= avatar_or_nickname(message) %>
+ 	  <div class="chatboxmessagecontent">
+			<p><%= message.content %></p>
+			<time datetime="<%= message.created_at %>" title="<%= message.created_at.strftime("%d %b  %Y at %I:%M%p") %>">
+				<%= message.author.first_name + " " + message.author.last_name %> • <%= message.created_at.strftime("%H:%M %p") %>
+			</time>
+			<%= link_to "", room_message_path(@room, message),class: "glyphicon glyphicon-remove-sign" , method: :delete, remote: true %>
+		</div>
+	<% end %>
+<% end %>

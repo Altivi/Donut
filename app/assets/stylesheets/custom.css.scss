@@ -173,3 +173,61 @@ button[data-toggle="modal"] {
 #post_content {
     resize: vertical;
 }
+
+
+/**************** room *******************/
+
+.room {
+    padding: 20px;
+    text-align: center;
+}
+
+.room_icon {
+    font-size: 50px;
+    text-decoration: none;
+    color: #D96459;
+    &:hover {
+        color: #8C4646;
+        text-decoration: none;
+    }
+}
+
+#new_room_button {
+    margin-top: 10px;
+}
+
+.delete-room-link, .glyphicon-remove-sign {
+    font-size: 15px;
+    color: #D96459;
+    &:hover {
+        color: red;
+        text-decoration: none;
+    }
+    &:link {
+        text-decoration: none;
+    }
+
+}
+
+/*********************************/
+
+.loading-gif {
+    align: middle;
+}
+
+.pagination-sm {
+    text-align: center;
+}
+
+.pagination li {
+    a {
+        color: #F2AE72;
+    }
+    .active {
+        a {
+            background-color: #fff;
+        }
+    }
+}
+
+.pagination a:active { border: 1px solid #000099; color: #000; }  
